@@ -73,23 +73,11 @@
     <None Include="extension.yaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Include="Localization\*.xaml">
-		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Include="Localization\*.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <third-party Include="../third-party" />
-    <license Include="../LICENSE" />
-    <changelog Include="../CHANGELOG.md" />
-    <readme Include="../README.md" />
-  </ItemGroup>
-  <Target Name="CopyMetaContent" AfterTargets="AfterBuild">
-    <Copy SourceFiles="@(third-party)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(license)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(changelog)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(readme)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
-  </Target>
   <ItemGroup>
     <None Include="icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
